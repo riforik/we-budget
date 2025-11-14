@@ -11,9 +11,10 @@ import { UserService, DBUser } from 'src/app/services/user.service';
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
-  dbUser: DBUser | null = null; // will store the DB user
-
   constructor(private auth: AuthService, private userService: UserService) {}
+
+  title = 'angular-test';
+  dbUser: DBUser | null = null; // will store the DB user
 
   ngOnInit() {
     this.userService.syncUserWithDB().subscribe({
