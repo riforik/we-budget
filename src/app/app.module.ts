@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment } from '../environments/environment';
 import { LoginButtonComponent } from 'src/app/components/login-button.component'
-import { LogoutButtonComponent } from './components/logout-button.component';
-import { ProfileComponent } from './components/profile.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +16,7 @@ import { ProfileComponent } from './components/profile.component';
     BrowserModule,
     AppRoutingModule,
     LoginButtonComponent,
-    LogoutButtonComponent,
-    ProfileComponent,
+    DashboardComponent,
     AuthModule.forRoot({
       domain: environment.auth0.domain,
       clientId: environment.auth0.clientId,
