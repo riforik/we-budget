@@ -1,5 +1,8 @@
 <div class="logged-in-message">✅ Successfully authenticated!</div>
-<h2 class="profile-section-title">Your Profile</h2>
+<h2 class="profile-section-title">{Your Profile}</h2>
+<p>Welcome, {{ dbUser.name }}!</p>
+<p>Your DB ID: {{ dbUser.id }}</p>
+<p>Your Auth0 ID: {{ dbUser.auth0_id }}</p>
 <div class="profile-card">
   <app-profile></app-profile>
 </div>

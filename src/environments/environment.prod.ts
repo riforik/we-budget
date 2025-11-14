@@ -6,3 +6,7 @@ export const environment = {
     redirectUri: window.location.origin, // http://localhost:4200
   },
 };
+
+export const database = {
+  url: '__PG_DB__',
+};
