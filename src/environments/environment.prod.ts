@@ -1,7 +1,8 @@
 export const environment = {
   production: true,
   auth0: {
-    domain: process.env['NG_APP_AUTH0_DOMAIN'] || '',
-    clientId: process.env['NG_APP_AUTH0_CLIENT_ID'] || '',
+    domain: '__AUTH0_DOMAIN__',
+    clientId: '__AUTH0_CLIENT_ID__',
+    redirectUri: window.location.origin, // http://localhost:4200
   },
 };

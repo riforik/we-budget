@@ -4,6 +4,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:vercel": "node replace-env.js && ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

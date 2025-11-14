@@ -1,7 +1,8 @@
 export const environment = {
-  auth0: {
-    domain: (import.meta as any).env.NG_APP_AUTH0_DOMAIN,
-    clientId: (import.meta as any).env.NG_APP_AUTH0_CLIENT_ID,
+  production: true,
+  auth: {
+    domain: '__AUTH0_DOMAIN__',
+    clientId: '__AUTH0_CLIENT_ID__',
     redirectUri: window.location.origin, // http://localhost:4200
   },
 };
