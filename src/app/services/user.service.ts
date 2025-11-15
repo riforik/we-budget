@@ -22,7 +22,7 @@ export class UserService {
     return this.auth.user$.pipe(
       switchMap((user) => {
         if (!user) return of(null);
-        return this.http.post<DBUser>('/api/sync-users', {
+        return this.http.post<DBUser>('/api/sync-user', {
           userId: user.sub,
           email: user.email,
           name: user.name,
