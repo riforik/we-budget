@@ -1,7 +1,9 @@
 const { Client } = require('pg'); // CommonJS require
 
 module.exports = async (req: any, res: any) => {
-  const client = new Client({ connectionString: process.env['DATABASE_URL'] });
+  const client = new Client({
+    connectionString: process.env['webudget_POSTGRES_URL'],
+  });
   const { userId, email, name } = req.body;
 
   try {
