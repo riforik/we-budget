@@ -1,5 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { Client } from 'pg';
+// import { Client } from 'pg';
+const { Client } = require('pg');
 import { database } from 'src/environments/environment.prod';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
