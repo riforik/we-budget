@@ -8,6 +8,9 @@ import { Observable, of } from 'rxjs';
 export interface DBUser {
   id: number;
   auth0_id: string;
+  email: string;
+  name: string;
+  created_at: string;
 }
 
 @Injectable({
@@ -23,6 +26,8 @@ export class UserService {
         if (!user) return of(null);
         return this.http.post<DBUser>('/api/sync-user', {
           userId: user.sub,
+          email: user.email,
+          name: user.name,
         });
       })
     );
