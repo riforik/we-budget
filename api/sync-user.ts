@@ -1,21 +1,14 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-// import { Client } from 'pg';
-const { Client } = require('pg');
 import { database } from 'src/environments/environment.prod';
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
+const { Client } = require('pg');
 
+module.exports = async (req: VercelRequest, res: VercelResponse) => {
   const { userId, email, name } = req.body;
-  if (!userId) return res.status(400).json({ error: 'Missing userId' });
-
   const client = new Client({ connectionString: database.url });
 
   try {
     await client.connect();
-
     const result = await client.query(
       'SELECT * FROM users WHERE auth0_id = $1',
       [userId]
@@ -32,8 +25,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
   } catch (err) {
     console.error(err);
-    return res.status(500).json({ error: 'Database error' });
+    return res.status(500).json({ error: 'Database error', details: err });
   } finally {
     await client.end();
   }
-}
+};
