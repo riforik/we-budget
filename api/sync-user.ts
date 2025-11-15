@@ -1,7 +1,6 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 const { Client } = require('pg'); // CommonJS require
 
-module.exports = async (req: VercelRequest, res: VercelResponse) => {
+module.exports = async (req: any, res: any) => {
   const client = new Client({ connectionString: process.env['DATABASE_URL'] });
   const { userId, email, name } = req.body;
 
