@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuthService } from '@auth0/auth0-angular';
 import { switchMap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 export interface DBUser {
   id: number;

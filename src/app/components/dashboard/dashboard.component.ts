@@ -40,7 +40,6 @@ export class DashboardComponent implements OnInit {
       next: (user) => {
         this.dbUser = user;
         console.log(this.dbUser);
-
         this.loading = false;
       },
       error: (err) => {
