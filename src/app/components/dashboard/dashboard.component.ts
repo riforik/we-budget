@@ -39,6 +39,8 @@ export class DashboardComponent implements OnInit {
     this.userService.syncUserWithDB().subscribe({
       next: (user) => {
         this.dbUser = user;
+        console.log(this.dbUser);
+
         this.loading = false;
       },
       error: (err) => {

@@ -1,6 +1,4 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { AuthService } from '@auth0/auth0-angular';
 import Papa from 'papaparse';
 
 @Component({
@@ -14,7 +12,6 @@ export class FileInputComponent implements OnInit {
   parseErrors: string[] = [];
   @Output() fileParsed = new EventEmitter<any[]>();
 
-  constructor(private http: HttpClient, private auth: AuthService) {}
   ngOnInit(): void {}
 
   onFileSelected(event: Event) {

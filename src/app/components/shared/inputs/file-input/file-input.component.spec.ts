@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FileInputComponent } from './file-input.component';
 
 describe('FileInputComponent', () => {
@@ -8,9 +7,8 @@ describe('FileInputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FileInputComponent]
-    })
-    .compileComponents();
+      imports: [FileInputComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FileInputComponent);
     component = fixture.componentInstance;
