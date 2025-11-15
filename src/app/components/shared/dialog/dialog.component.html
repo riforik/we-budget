@@ -1,0 +1,24 @@
+<dialog id="dialog" #myDialog>
+  <button (click)="close()">Close</button>
+  <h1>Here's your data!</h1>
+  <table>
+    <thead>
+      <tr>
+        @for(col of columns; track col) {
+        <th>{{ col }}</th>
+        }
+        <th>Categories</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of data; track row.key) {
+      <tr>
+        @for(col of columns; track col) {
+        <td>{{ row[col] }}</td>
+        }
+        <td><app-web-dropdown [dataArgs]="categories"></app-web-dropdown></td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</dialog>

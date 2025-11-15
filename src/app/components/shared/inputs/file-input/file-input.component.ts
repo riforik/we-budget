@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '@auth0/auth0-angular';
 import Papa from 'papaparse';
@@ -12,6 +12,8 @@ import Papa from 'papaparse';
 export class FileInputComponent implements OnInit {
   previewData: any[] = [];
   parseErrors: string[] = [];
+  @Output() fileParsed = new EventEmitter<any[]>();
+
   constructor(private http: HttpClient, private auth: AuthService) {}
   ngOnInit(): void {}
 
@@ -32,6 +34,7 @@ export class FileInputComponent implements OnInit {
         this.previewData = rows
           .map((r) => this.cleanRow(r))
           .filter((r) => this.validateRow(r));
+        this.fileParsed.emit(this.previewData);
       },
     });
   }
@@ -55,7 +58,6 @@ export class FileInputComponent implements OnInit {
 
   validateRow(row: any) {
     if (!row.date || isNaN(Date.parse(row.date))) return false;
-    if (!row.category || row.category.trim().length < 1) return false;
     if (isNaN(Number(row.amount))) return false;
 
     return true;
