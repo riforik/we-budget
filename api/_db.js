@@ -1,8 +1,11 @@
 // /api/_db.js
-import { Client } from 'pg';
+const { Client } = require('pg');
 
-export function createClient() {
+function createClient() {
   return new Client({
     connectionString: process.env['webudget_POSTGRES_URL'],
+    ssl: { rejectUnauthorized: false },
   });
 }
+
+module.exports = { createClient };

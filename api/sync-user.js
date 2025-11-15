@@ -1,4 +1,6 @@
-module.exports = async (req: any, res: any) => {
+const { createClient } = require('./_db.js'); // ✔ ADD THIS LINE
+
+module.exports = async (req, res) => {
   const client = createClient();
   const { userId, email, name } = req.body;
 

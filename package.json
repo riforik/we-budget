@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --configuration development",
     "build": "ng build",
     "build:vercel": "node replace-env.js && ng build --configuration production",
     "watch": "ng build --watch --configuration development",

@@ -1,6 +1,6 @@
 const { createClient } = require('./_db.js'); // CommonJS require
 
-module.exports = async (req: any, res: any) => {
+module.exports = async (req, res) => {
   if (req.method !== 'GET') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
