@@ -1,15 +1,12 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
-const { Client } = require('pg');
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+const { Client } = require('pg'); // CommonJS require
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
-  const client = new Client({
-    connectionString: process.env['DATABASE_URL'], // <-- use environment variable
-  });
+  const client = new Client({ connectionString: process.env['DATABASE_URL'] });
+  const { userId, email, name } = req.body;
 
   try {
     await client.connect();
-
-    const { userId, email, name } = req.body;
 
     const result = await client.query(
       'SELECT * FROM users WHERE auth0_id = $1',
