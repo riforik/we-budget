@@ -17,6 +17,6 @@ export class CategoryService {
     }
 
     // Replace with your actual backend endpoint
-    return this.http.get<Category[]>('/api/categories');
+    return this.http.get<Category[]>('/api/get-categories');
   }
 }
