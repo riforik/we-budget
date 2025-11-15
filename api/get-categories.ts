@@ -5,9 +5,7 @@ module.exports = async (req: any, res: any) => {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const client = new Client({
-    connectionString: process.env['webudget_POSTGRES_URL'],
-  });
+  const client = createClient();
 
   try {
     await client.connect();
