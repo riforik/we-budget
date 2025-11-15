@@ -1,0 +1,8 @@
+<select>
+  @for (item of dataArgs; track item.id) {
+
+  <option [value]="item.id">
+    {{ item.name }}
+  </option>
+  }
+</select>

@@ -23,7 +23,7 @@
       alt="Auth0 Logo"
       class="auth0-logo"
     />
-    <h1 class="main-title">Welcome to Sample0</h1>
+    <h1 class="main-title">Welcome to {{ title }}</h1>
 
     <!-- Authenticated State -->
     @if (auth.isAuthenticated$ | async) {

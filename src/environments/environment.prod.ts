@@ -5,6 +5,7 @@ export const environment = {
     clientId: '__AUTH0_CLIENT_ID__',
     redirectUri: window.location.origin, // http://localhost:4200
   },
+  useMockUser: false,
 };
 
 export const database = {

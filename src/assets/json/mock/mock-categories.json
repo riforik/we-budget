@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Groceries" },
+  { "id": 2, "name": "Rent/Mortgage" },
+  { "id": 3, "name": "Utilities" },
+  { "id": 4, "name": "Transportation" },
+  { "id": 5, "name": "Car Payments" },
+  { "id": 6, "name": "Insurance" },
+  { "id": 7, "name": "Dining Out" },
+  { "id": 8, "name": "Entertainment" },
+  { "id": 9, "name": "Healthcare" },
+  { "id": 10, "name": "Subscriptions" }
+]

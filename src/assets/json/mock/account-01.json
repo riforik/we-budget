@@ -1,0 +1,24 @@
+{
+  "created_at": "2025-11-14T20:12:56.753Z",
+  "email": "fake.email@gmail.com",
+  "email_verified": false,
+  "identities": [
+    {
+      "connection": "Username-Password-Authentication",
+      "provider": "auth0",
+      "isSocial": false
+    }
+  ],
+  "id": "devModeRickyRick",
+  "name": "Ricky",
+  "nickname": "SlickRick",
+  "picture": "https://s.gravatar.com/avatar/361ab29d16568c635bdaca5928a41f8b?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fis.png",
+  "updated_at": "2025-11-15T01:08:31.234Z",
+  "auth0_id": "auth0|devModeRickyRick",
+  "last_ip": "127.0.0.1",
+  "last_login": "2025-11-15T01:07:25.861Z",
+  "logins_count": 14,
+  "blocked_for": [],
+  "guardian_authenticators": [],
+  "passkeys": []
+}
