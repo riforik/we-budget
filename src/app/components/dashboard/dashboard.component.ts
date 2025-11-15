@@ -5,10 +5,16 @@ import { UserService, DBUser } from 'src/app/services/user.service';
 import { CategoryService } from 'src/app/services/iLoveData.service';
 import { Category } from 'src/app/constants/category.config';
 import { WebDropdownComponent } from '../shared/web-dropdown/web-dropdown.component';
+import { FileInputComponent } from '../shared/inputs/file-input/file-input.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [LogoutButtonComponent, ProfileComponent, WebDropdownComponent],
+  imports: [
+    LogoutButtonComponent,
+    ProfileComponent,
+    WebDropdownComponent,
+    FileInputComponent,
+  ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
